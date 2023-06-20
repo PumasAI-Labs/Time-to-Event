@@ -1,0 +1,76 @@
+# yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
+site_name: Pumas-AI Workshop PLACEHOLDER
+repo_name: PumasAI-Labs/Workshop-PLACEHOLDER
+repo_url: https://github.com/PumasAI-Labs/Workshop-PLACEHOLDER
+copyright: Copyright &copy; 2023 Pumas-AI, Inc.
+plugins:
+  - search
+theme:
+  name: material
+  logo: assets/logo.png
+  icon:
+    repo: fontawesome/brands/github
+  favicon: assets/logo.png
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  highlightjs: true
+  hljs_languages:
+      - yaml
+      - julia
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.instant
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - toc.follow
+    - toc.integrate
+extra:
+  homepage: https://pumas.ai
+  generator: false
+  social:
+    - icon: fontawesome/solid/globe
+      link: https://pumas.ai
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/pumas_ai
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/pumas-ai
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:training@pumas.ai
+markdown_extensions:
+  - tables
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - def_list
+nav:
+  - Home: index.md
+  - Reference Sheet: reference.md
+  - Instructor's Note: instructors.md
+  - Code of Conduct: code_of_conduct.md
+  - Waiver of Liability: waiver.md
+  - How to Contribute: contribute.md
