@@ -1,28 +1,38 @@
 ---
-title: Reference Sheets for Pumas-AI Workshop PLACEHOLDER
+title: Reference Sheets for Pumas-AI Time to Event Workshop
 ---
 
 [![CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](http://creativecommons.org/licenses/by-sa/4.0/)
 
 ## Key Points
 
-This can be either a markdown table or a list.
+- You can define time to event models in Pumas by using the `TimeToEvent` function in the `@derived` block
+- You can use any parameterized function to define the underlying distribution of the hazard function
+- Time to event models in Pumas need to be fitted using either `NaivePooled` or `LaplaceI` and do not support `FOCE`
 
 ## Summary of Basic Commands
 
 | Action      | Command       | Observations          |
 | ----------- | ------------- | --------------------- |
-| placeholder | `placeholder` | this is a placeholder |
+| Define a time to event model | `TimeToEvent(λ, Λ)` | `TimeToEvent` should be used in the `@derived` block, `λ` and `Λ` are hazard and cumulative hazard respectively.  |
 
 ## Glossary
 
-`term1`
+Time to event model
 
 : Definition of the term one above.
 
-`term2`
+Hazard
 
-: Definition of the term two above.
+: Say about basal, total, and cumulative hazard
+
+Weibull distribution
+
+: Say something about TTE and the Kappa shape parameter and assumptions
+
+Gompertz distribution
+
+: Say something about TTE and the Kappa shape parameter and assumptions
 
 ## Get in touch
 
