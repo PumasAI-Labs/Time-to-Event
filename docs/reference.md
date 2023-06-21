@@ -12,9 +12,9 @@ title: Reference Sheets for Pumas-AI Time to Event Workshop
 
 ## Summary of Basic Commands
 
-| Action      | Command       | Observations          |
-| ----------- | ------------- | --------------------- |
-| Define a time to event model | `TimeToEvent(λ, Λ)` | `TimeToEvent` should be used in the `@derived` block, `λ` and `Λ` are hazard and cumulative hazard respectively.  |
+| Action                       | Command             | Observations                                                                                                     |
+| ---------------------------- | ------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| Define a time to event model | `TimeToEvent(λ, Λ)` | `TimeToEvent` should be used in the `@derived` block, `λ` and `Λ` are hazard and cumulative hazard respectively. |
 
 ## Glossary
 

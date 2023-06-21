@@ -19,7 +19,7 @@ then no more observations would be added for that subject.
 However, if there is an event, then an evid `0` would be recorded at the observed time with `1` as the `DV` value.
 We also have a binary covariate `DOSE` that impacts in the propensity of subjects experiencing an event.
 Since we are using evids, we need also to specify an amount when parsing the data with `read_pumas`.
-However we don't have an amount column in the `tte_single` dataset.
+However, we don't have an amount column in the `tte_single` dataset.
 We need to create a column `:AMT` filled with `0`s.
 That solves the amount issue.
 Our population is ready to be used in the subsequent models.
@@ -27,15 +27,24 @@ Our population is ready to be used in the subsequent models.
 We will use three models in the single time to event workflow.
 They have the same covariate (`DOSE`) but they differ on the assumptions of the underlying distribution of the hazard function:
 
-1. Exponential hazard function: assumes ...
-1. Weibull hazard function: assumes ...
-1. Gompertz hazard function: assumes ...
+1. Exponential hazard function: assumes constant hazard
+1. Weibull hazard function: assumes either increasing, decreasing or constant hazard
+1. Gompertz hazard function: assumes either increasing, decreasing or constant hazard
 
-TODO: Exponential model (assumptions)
+The exponential model is the first TTE model that we will fit.
+We are defining `λ₁` as the basal hazard and `β` as the `DOSE` covariate effect.
+In the `@pre` block we calculate `_λ₁` as the basal hazard with inter-subject
+variability and `_λ₀` as the total hazard for each subject.
+Since the exponential model has a simple formula,
+we define the in the `@vars` block that `λ = _λ₀ `.
 
-TODO: Exponential model (assumptions)
+For the Weibull model the parameters are almost the same as the exponential model,
+but with the addition of the shape parameter `Κ`.
+In the `@vars` block we use the Weibull formula for the hazard function `λ`.
+The Gompertz model follows a similar pattern as the Weibull model.
 
-TODO: Exponential model (assumptions)
+In all of these three models, we are using the special distribution `TimeToEvent`.
+For the fitting procedure we cannot use `FOCE()` and we need to use either `NaivePooled()` or `LaplaceI()`.
 
 Finally, you can compare the estimates with the `compare_estimates` from `PumasUtilities`.
 If you find opportune, you can go over model comparisons between the three models with fit metrics, e.g. AIC,
