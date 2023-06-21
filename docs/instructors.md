@@ -47,7 +47,7 @@ In all of these three models, we are using the special distribution `TimeToEvent
 For the fitting procedure we cannot use `FOCE()` and we need to use either `NaivePooled()` or `LaplaceI()`.
 
 Finally, you can compare the estimates with the `compare_estimates` from `PumasUtilities`.
-If you find opportune, you can go over model comparisons between the three models with fit metrics, e.g. AIC,
+If you find it opportune, you can go over model comparisons between the three models with fit metrics, e.g. AIC,
 goodness of fit plots, and visual predictive checks.
 However, be mindful that model assessment is not a requirement for this workshop.
 
